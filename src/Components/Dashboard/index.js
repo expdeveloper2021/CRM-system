@@ -11,7 +11,6 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import BusinessIcon from '@material-ui/icons/Business';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import StarIcon from '@material-ui/icons/Star';
 import CreateIcon from '@material-ui/icons/Create';
 import ContactSupportIcon from '@material-ui/icons/ContactSupport';
@@ -72,7 +71,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-function ResponsiveDrawer(props) {
+function Dashboard(props) {
     const { container } = props;
     const classes = useStyles();
     const theme = useTheme();
@@ -130,13 +129,6 @@ function ResponsiveDrawer(props) {
                     <ListItemText primary="My Account" />
                 </ListItem>
                 <Divider />
-                <ListItem button>
-                    <ListItemIcon>
-                        <FileCopyIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="My Investments" />
-                </ListItem>
-                <Divider />
                 <ListItem button onClick={handleClick}>
                     <ListItemIcon>
                         <BusinessIcon />
@@ -169,13 +161,6 @@ function ResponsiveDrawer(props) {
                 <Divider />
                 <ListItem button>
                     <ListItemIcon>
-                        <AttachMoneyIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="My Wallet" />
-                </ListItem>
-                <Divider />
-                <ListItem button>
-                    <ListItemIcon>
                         <StarIcon />
                     </ListItemIcon>
                     <ListItemText primary="Upgrade" />
@@ -201,12 +186,6 @@ function ResponsiveDrawer(props) {
                                 <ChevronRightIcon />
                             </ListItemIcon>
                             <ListItemText primary="Direct Income" />
-                        </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <ChevronRightIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Transfer History" />
                         </ListItem>
                         <ListItem button className={classes.nested}>
                             <ListItemIcon>
@@ -351,7 +330,7 @@ function ResponsiveDrawer(props) {
     );
 }
 
-ResponsiveDrawer.propTypes = {
+Dashboard.propTypes = {
     /**
      * Injected by the documentation to work in an iframe.
      * You won't need it on your project.
@@ -359,4 +338,4 @@ ResponsiveDrawer.propTypes = {
     container: PropTypes.instanceOf(typeof Element === 'undefined' ? Object : Element),
 };
 
-export default ResponsiveDrawer;
+export default Dashboard;

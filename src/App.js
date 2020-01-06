@@ -1,12 +1,13 @@
 import React from 'react';
-import ResponsiveDrawer from './Components/Dashboard';
+import Routes from './Config/Routes';
 
 function App() {
   return (
     <div className="App">
-      <ResponsiveDrawer />
+      <Routes />
     </div>
   );
 }
+
 
 export default App;

@@ -1,0 +1,51 @@
+.content-containerl {
+    width: 900px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+}
+
+.container-workl {
+    width: 70%;
+    height: 500px;
+    border: 5px double black;
+    padding-top: 20px;
+}
+
+.input-forms-w {
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid black;
+    margin: 0px 5px 5px 5px;
+}
+
+.all-inputs-form {
+    width: 80%;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+
+.all-inputs-form .input-group {
+    margin-top: 10px;
+}
+
+.btn-registration {
+    text-align: right;
+}
+
+@media(max-width: 1000px) {
+    .content-container {
+        width: 100%;
+        justify-content: center;
+    }
+    .btn-container {
+        text-align: left;
+        padding-left: 30px;
+    }
+    .btn-container Button {
+        margin-top: 10px !important;
+    }
+    .container-work {
+        width: 80%;
+    }
+}
