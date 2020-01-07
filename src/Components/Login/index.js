@@ -24,7 +24,7 @@ class Login extends Component {
                     icon: "success",
                 }).then(() => {
                     this.setState({ email: '', password: '' })
-                    this.props.history.psuh("/MemberPanel")
+                    this.props.history.push("/MemberPanel")
                 })
             }).catch((err) => {
                 swal({
