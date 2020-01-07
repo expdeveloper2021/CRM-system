@@ -34,18 +34,8 @@
 }
 
 @media(max-width: 1000px) {
-    .content-container {
+    .content-containerl {
         width: 100%;
         justify-content: center;
-    }
-    .btn-container {
-        text-align: left;
-        padding-left: 30px;
-    }
-    .btn-container Button {
-        margin-top: 10px !important;
-    }
-    .container-work {
-        width: 80%;
     }
 }
