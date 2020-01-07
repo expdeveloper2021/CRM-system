@@ -25,11 +25,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import './index.css'
@@ -123,7 +118,7 @@ function Upgrade(props) {
                     <ListItemIcon>
                         <DashboardIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Dashboard" />
+                    <ListItemText primary="Dashboard" onClick={() => props.history.push("/MemberPanel")} />
                 </ListItem>
                 <Divider />
                 <ListItem button>
@@ -167,7 +162,7 @@ function Upgrade(props) {
                     <ListItemIcon>
                         <StarIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Upgrade" />
+                    <ListItemText primary="Upgrade" onClick={() => props.history.push("/Upgrade")} />
                 </ListItem>
                 <Divider />
                 <ListItem button onClick={handleClick2}>
@@ -312,34 +307,154 @@ function Upgrade(props) {
                 </div>
                 <div className="main-content-upgrade">
                     <div className="card-upgrade">
-
+                        <div className="top-card-upgrade">
+                            <p>Rs. 2400</p>
+                        </div>
+                        <div className="bottom-card-upgrade">
+                            <p>ROI 1.25% per Day</p>
+                            <p>ROI Days: 160 Days</p>
+                            <p>Binary Capping: 4800 Weekly</p>
+                            <p>Referral Income: 20%</p>
+                            <p>Binary: 8% Matching ratio 1:1</p>
+                        </div>
+                        <div className="btn-card-upgrade">
+                            <Button variant="contained">Default</Button>
+                        </div>
                     </div>
                     <div className="card-upgrade">
-
+                        <div className="top-card-upgrade">
+                            <p>Rs. 6000</p>
+                        </div>
+                        <div className="bottom-card-upgrade">
+                            <p>ROI 1.25% per Day</p>
+                            <p>ROI Days: 160 Days</p>
+                            <p>Binary Capping: 12,000 Weekly</p>
+                            <p>Referral Income: 20%</p>
+                            <p>Binary: 8% Matching ratio 1:1</p>
+                        </div>
+                        <div className="btn-card-upgrade">
+                            <Button variant="contained">Default</Button>
+                        </div>
                     </div>
                     <div className="card-upgrade">
-
+                        <div className="top-card-upgrade">
+                            <p>Rs. 10,000</p>
+                        </div>
+                        <div className="bottom-card-upgrade">
+                            <p>ROI 1.25% per Day</p>
+                            <p>ROI Days: 160 Days</p>
+                            <p>Binary Capping: 20,000 Weekly</p>
+                            <p>Referral Income: 20%</p>
+                            <p>Binary: 8% Matching ratio 1:1</p>
+                        </div>
+                        <div className="btn-card-upgrade">
+                            <Button variant="contained">Default</Button>
+                        </div>
                     </div>
                     <div className="card-upgrade">
-
+                        <div className="top-card-upgrade">
+                            <p>Rs. 16,000</p>
+                        </div>
+                        <div className="bottom-card-upgrade">
+                            <p>ROI 1.25% per Day</p>
+                            <p>ROI Days: 160 Days</p>
+                            <p>Binary Capping: 32,000 Weekly</p>
+                            <p>Referral Income: 20%</p>
+                            <p>Binary: 8% Matching ratio 1:1</p>
+                        </div>
+                        <div className="btn-card-upgrade">
+                            <Button variant="contained">Default</Button>
+                        </div>
                     </div>
                     <div className="card-upgrade">
-
+                        <div className="top-card-upgrade">
+                            <p>Rs. 20,000</p>
+                        </div>
+                        <div className="bottom-card-upgrade">
+                            <p>ROI 1.25% per Day</p>
+                            <p>ROI Days: 160 Days</p>
+                            <p>Binary Capping: 40,000 Weekly</p>
+                            <p>Referral Income: 20%</p>
+                            <p>Binary: 8% Matching ratio 1:1</p>
+                        </div>
+                        <div className="btn-card-upgrade">
+                            <Button variant="contained">Default</Button>
+                        </div>
                     </div>
                     <div className="card-upgrade">
-
+                        <div className="top-card-upgrade">
+                            <p>Rs. 30,000</p>
+                        </div>
+                        <div className="bottom-card-upgrade">
+                            <p>ROI 1.25% per Day</p>
+                            <p>ROI Days: 160 Days</p>
+                            <p>Binary Capping: 60,000 Weekly</p>
+                            <p>Referral Income: 20%</p>
+                            <p>Binary: 8% Matching ratio 1:1</p>
+                        </div>
+                        <div className="btn-card-upgrade">
+                            <Button variant="contained">Default</Button>
+                        </div>
                     </div>
                     <div className="card-upgrade">
-
+                        <div className="top-card-upgrade">
+                            <p>Rs. 50,000</p>
+                        </div>
+                        <div className="bottom-card-upgrade">
+                            <p>ROI 1.25% per Day</p>
+                            <p>ROI Days: 160 Days</p>
+                            <p>Binary Capping: 1 Lakh Weekly</p>
+                            <p>Referral Income: 20%</p>
+                            <p>Binary: 8% Matching ratio 1:1</p>
+                        </div>
+                        <div className="btn-card-upgrade">
+                            <Button variant="contained">Default</Button>
+                        </div>
                     </div>
                     <div className="card-upgrade">
-
+                        <div className="top-card-upgrade">
+                            <p>Rs. 100,000</p>
+                        </div>
+                        <div className="bottom-card-upgrade">
+                            <p>ROI 1.25% per Day</p>
+                            <p>ROI Days: 160 Days</p>
+                            <p>Binary Capping: 2 Lakh Weekly</p>
+                            <p>Referral Income: 20%</p>
+                            <p>Binary: 8% Matching ratio 1:1</p>
+                        </div>
+                        <div className="btn-card-upgrade">
+                            <Button variant="contained">Default</Button>
+                        </div>
                     </div>
                     <div className="card-upgrade">
-
+                        <div className="top-card-upgrade">
+                            <p>Rs. 200,000</p>
+                        </div>
+                        <div className="bottom-card-upgrade">
+                            <p>ROI 1.25% per Day</p>
+                            <p>ROI Days: 160 Days</p>
+                            <p>Binary Capping: 4 Lakh Weekly</p>
+                            <p>Referral Income: 20%</p>
+                            <p>Binary: 8% Matching ratio 1:1</p>
+                        </div>
+                        <div className="btn-card-upgrade">
+                            <Button variant="contained">Default</Button>
+                        </div>
                     </div>
                     <div className="card-upgrade">
-
+                        <div className="top-card-upgrade">
+                            <p>Rs. 500,000</p>
+                        </div>
+                        <div className="bottom-card-upgrade">
+                            <p>ROI 1.25% per Day</p>
+                            <p>ROI Days: 160 Days</p>
+                            <p>Binary Capping: 10 Lakh Weekly</p>
+                            <p>Referral Income: 20%</p>
+                            <p>Binary: 8% Matching ratio 1:1</p>
+                        </div>
+                        <div className="btn-card-upgrade">
+                            <Button variant="contained">Default</Button>
+                        </div>
                     </div>
                 </div>
             </main>

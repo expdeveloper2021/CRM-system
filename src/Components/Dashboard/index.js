@@ -58,7 +58,6 @@ const useStyles = makeStyles(theme => ({
     },
     content: {
         flexGrow: 1,
-        padding: theme.spacing(3),
     },
     root2: {
         width: '100%',
@@ -112,7 +111,7 @@ function Dashboard(props) {
                     <ListItemIcon>
                         <DashboardIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Dashboard" />
+                    <ListItemText primary="Dashboard" onClick={() => props.history.push("/MemberPanel")} />
                 </ListItem>
                 <Divider />
                 <ListItem button>
@@ -156,7 +155,7 @@ function Dashboard(props) {
                     <ListItemIcon>
                         <StarIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Upgrade" />
+                    <ListItemText primary="Upgrade" onClick={() => props.history.push("/Upgrade")} />
                 </ListItem>
                 <Divider />
                 <ListItem button onClick={handleClick2}>
@@ -295,29 +294,36 @@ function Dashboard(props) {
             </nav>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
-                <Typography paragraph>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-                    facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-                    gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-                    donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                    adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-                    Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-                    imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-                    arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-                    donec massa sapien faucibus et molestie ac.
-                </Typography>
-                <Typography paragraph>
-                    Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-                    facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-                    tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-                    consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-                    vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-                    hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-                    tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-                    nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-                    accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+                <div className="informative-content">
+                    <DashboardIcon style={{ fill: "black" }} />
+                    <span style={{ marginLeft: 10 }}>Dashboard</span>
+                </div>
+                <div className="main-content-dashboard">
+                    <div className="upper-portion-dashboard">
+                        <div className="informative-dashboard">
+                            <p>ID Verification</p>
+                            <p>Pending / Approved</p>
+                        </div>
+                        <div className="informative-dashboard">
+                            <p>$0.00</p>
+                            <p>ROI Income</p>
+                        </div>
+                        <div className="informative-dashboard">
+                            <p>$0.00</p>
+                            <p>Binary Income</p>
+                        </div>
+                        <div className="informative-dashboard">
+                            <p>$0.00</p>
+                            <p>Direct Income</p>
+                        </div>
+                    </div>
+                    <div className="status-dashboard">
+                        <p>Your Account Status</p>
+                        <hr />
+                        <p>Your account is a free account, please upgrade it to get more advantages.</p>
+                    </div>
+                </div>
+
             </main>
         </div>
     );

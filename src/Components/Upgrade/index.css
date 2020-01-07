@@ -8,23 +8,73 @@
 }
 
 .main-content-upgrade {
-    width: 98%;
-    height: auto;
+    width: 90%;
     margin: 0px auto;
-    /* border: 1px solid black; */
     margin-top: 15px;
     border-radius: 5px;
     border-top: 4px solid red;
     background-color: white;
     margin-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .card-upgrade {
-    width: 250px;
-    height: 400px;
+    width: 270px;
+    height: 420px;
     border: 1px solid black;
     margin: 3px 10px;
+}
+
+.card-upgrade:hover {
+    background-color: rgba(8, 45, 23, 0.51);
+}
+
+.card-upgrade:hover .bottom-card-upgrade p {
+    color: white;
+}
+
+.card-upgrade:hover .btn-card-upgrade button {
+    background-color: white;
+    color: black;
+}
+
+.top-card-upgrade {
+    width: 100%;
+    height: 125px;
+    background-color: #082D17;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-card-upgrade p {
+    color: white;
+    font-size: 24px;
+}
+
+.bottom-card-upgrade {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.bottom-card-upgrade p {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-card-upgrade {
+    width: 100%;
+    text-align: center;
+}
+
+.btn-card-upgrade button {
+    background-color: teal;
+    color: white;
 }

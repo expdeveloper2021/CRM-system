@@ -15,3 +15,49 @@ span.MuiTypography-body1 {
 .makeStyles-nested-9 {
     padding-left: 20px !important;
 }
+
+.main-content-dashboard {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 15px;
+    border-radius: 5px;
+    border-top: 4px solid red;
+    background-color: white;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.upper-portion-dashboard {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.informative-dashboard {
+    width: 230px;
+    height: 100px;
+    margin: 5px 10px;
+    background-image: linear-gradient(to right, #217173, #63b83f);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+
+.informative-dashboard p {
+    color: white;
+}
+
+.status-dashboard {
+    width: 90%;
+    background-color: whitesmoke;
+    margin: 0px auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 6px 5px;
+    padding-bottom: 2px;
+}
