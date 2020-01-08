@@ -242,7 +242,7 @@ function Upgrade(props) {
                     <ListItemIcon>
                         <ExitToAppIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Logout" />
+                    <ListItemText primary="Logout" onClick={() => window.location.href = "https://www.futuretrades.in"} />
                 </ListItem>
                 <Divider />
             </List>
@@ -318,7 +318,7 @@ function Upgrade(props) {
                             <p>Binary: 8% Matching ratio 1:1</p>
                         </div>
                         <div className="btn-card-upgrade">
-                            <Button variant="contained">Default</Button>
+                            <Button variant="contained">Upgrade</Button>
                         </div>
                     </div>
                     <div className="card-upgrade">
@@ -333,7 +333,7 @@ function Upgrade(props) {
                             <p>Binary: 8% Matching ratio 1:1</p>
                         </div>
                         <div className="btn-card-upgrade">
-                            <Button variant="contained">Default</Button>
+                            <Button variant="contained">Upgrade</Button>
                         </div>
                     </div>
                     <div className="card-upgrade">
@@ -348,7 +348,7 @@ function Upgrade(props) {
                             <p>Binary: 8% Matching ratio 1:1</p>
                         </div>
                         <div className="btn-card-upgrade">
-                            <Button variant="contained">Default</Button>
+                            <Button variant="contained">Upgrade</Button>
                         </div>
                     </div>
                     <div className="card-upgrade">
@@ -363,7 +363,7 @@ function Upgrade(props) {
                             <p>Binary: 8% Matching ratio 1:1</p>
                         </div>
                         <div className="btn-card-upgrade">
-                            <Button variant="contained">Default</Button>
+                            <Button variant="contained">Upgrade</Button>
                         </div>
                     </div>
                     <div className="card-upgrade">
@@ -378,7 +378,7 @@ function Upgrade(props) {
                             <p>Binary: 8% Matching ratio 1:1</p>
                         </div>
                         <div className="btn-card-upgrade">
-                            <Button variant="contained">Default</Button>
+                            <Button variant="contained">Upgrade</Button>
                         </div>
                     </div>
                     <div className="card-upgrade">
@@ -393,7 +393,7 @@ function Upgrade(props) {
                             <p>Binary: 8% Matching ratio 1:1</p>
                         </div>
                         <div className="btn-card-upgrade">
-                            <Button variant="contained">Default</Button>
+                            <Button variant="contained">Upgrade</Button>
                         </div>
                     </div>
                     <div className="card-upgrade">
@@ -408,7 +408,7 @@ function Upgrade(props) {
                             <p>Binary: 8% Matching ratio 1:1</p>
                         </div>
                         <div className="btn-card-upgrade">
-                            <Button variant="contained">Default</Button>
+                            <Button variant="contained">Upgrade</Button>
                         </div>
                     </div>
                     <div className="card-upgrade">
@@ -423,7 +423,7 @@ function Upgrade(props) {
                             <p>Binary: 8% Matching ratio 1:1</p>
                         </div>
                         <div className="btn-card-upgrade">
-                            <Button variant="contained">Default</Button>
+                            <Button variant="contained">Upgrade</Button>
                         </div>
                     </div>
                     <div className="card-upgrade">
@@ -438,7 +438,7 @@ function Upgrade(props) {
                             <p>Binary: 8% Matching ratio 1:1</p>
                         </div>
                         <div className="btn-card-upgrade">
-                            <Button variant="contained">Default</Button>
+                            <Button variant="contained">Upgrade</Button>
                         </div>
                     </div>
                     <div className="card-upgrade">
@@ -453,7 +453,7 @@ function Upgrade(props) {
                             <p>Binary: 8% Matching ratio 1:1</p>
                         </div>
                         <div className="btn-card-upgrade">
-                            <Button variant="contained">Default</Button>
+                            <Button variant="contained">Upgrade</Button>
                         </div>
                     </div>
                 </div>

@@ -16,23 +16,27 @@ class Login extends Component {
 
     signUp() {
         const { email, password } = this.state
-        firebase.auth().signInWithEmailAndPassword(email, password)
-            .then((succ) => {
-                swal({
-                    title: "Great!",
-                    text: "Sign In Successfully",
-                    icon: "success",
-                }).then(() => {
-                    this.setState({ email: '', password: '' })
-                    this.props.history.push("/MemberPanel")
+        if (email === "admin@ft.com" && password === "admin") {
+            this.props.history.push("/AdminPanel")
+        } else {
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((succ) => {
+                    swal({
+                        title: "Great!",
+                        text: "Sign In Successfully",
+                        icon: "success",
+                    }).then(() => {
+                        this.setState({ email: '', password: '' })
+                        this.props.history.push("/MemberPanel")
+                    })
+                }).catch((err) => {
+                    swal({
+                        title: "Error Identified",
+                        text: err.message,
+                        icon: "error",
+                    });
                 })
-            }).catch((err) => {
-                swal({
-                    title: "Error Identified",
-                    text: err.message,
-                    icon: "error",
-                });
-            })
+        }
     }
 
     render() {

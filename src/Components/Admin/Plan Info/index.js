@@ -8,7 +8,6 @@ import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ScheduleIcon from '@material-ui/icons/Schedule';
-import CheckIcon from '@material-ui/icons/Check';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -68,7 +67,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-function AdminDashboard(props) {
+function PlanDetails(props) {
     const { container } = props;
     const classes = useStyles();
     const theme = useTheme();
@@ -78,16 +77,16 @@ function AdminDashboard(props) {
         setMobileOpen(!mobileOpen);
     }
 
-    function createData(email, status) {
-        return { email, status };
+    function createData(rupees, qty) {
+        return { rupees, qty };
     }
 
     const rows = [
-        createData('Frozen yoghurt', "Offline"),
-        createData('Ice cream sandwich', "Offline"),
-        createData('Eclair', "Offline"),
-        createData('Cupcake', "Active"),
-        createData('Gingerbread', "Active"),
+        createData("2400", 1),
+        createData("6000", 4),
+        createData("16,000", 2),
+        createData("30,000", 9),
+        createData("100,000", 3),
     ];
 
     const drawer = (
@@ -183,55 +182,29 @@ function AdminDashboard(props) {
                 <div className={classes.toolbar} />
                 <div className="informative-content">
                     <DashboardIcon style={{ fill: "black" }} />
-                    <span style={{ marginLeft: 10 }}>Dashboard</span>
+                    <span style={{ marginLeft: 10 }}>All Plans</span>
                 </div>
                 <div className="main-content-dashboard">
                     <div className="informative-content">
                         <ScheduleIcon style={{ fill: "black" }} />
-                        <span style={{ marginLeft: 10 }}>Pending</span>
+                        <span style={{ marginLeft: 10 }}>Sold Plans</span>
                     </div>
                     <div>
                         <TableContainer component={Paper}>
                             <Table className={classes.table} aria-label="simple table">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell style={{ fontWeight: "bold" }}>Email</TableCell>
-                                        <TableCell align="right" style={{ fontWeight: "bold" }}>Status</TableCell>
+                                        <TableCell style={{ fontWeight: "bold" }}>Rupees</TableCell>
+                                        <TableCell align="right" style={{ fontWeight: "bold" }}>Quantity</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
                                     {rows.map(row => (
                                         <TableRow key={row.email}>
                                             <TableCell>
-                                                {row.email}
+                                                {row.rupees}
                                             </TableCell>
-                                            <TableCell align="right">{row.status}</TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                    </div>
-                    <div className="informative-content" style={{ marginTop: 10 }}>
-                        <CheckIcon style={{ fill: "black" }} />
-                        <span style={{ marginLeft: 10 }}>Approved</span>
-                    </div>
-                    <div>
-                        <TableContainer component={Paper}>
-                            <Table className={classes.table} aria-label="simple table">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell style={{ fontWeight: "bold" }}>Email</TableCell>
-                                        <TableCell align="right" style={{ fontWeight: "bold" }}>Status</TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {rows.map(row => (
-                                        <TableRow key={row.email}>
-                                            <TableCell>
-                                                {row.email}
-                                            </TableCell>
-                                            <TableCell align="right">{row.status}</TableCell>
+                                            <TableCell align="right">{row.qty}</TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>
@@ -244,7 +217,7 @@ function AdminDashboard(props) {
     );
 }
 
-AdminDashboard.propTypes = {
+PlanDetails.propTypes = {
     /**
      * Injected by the documentation to work in an iframe.
      * You won't need it on your project.
@@ -252,4 +225,4 @@ AdminDashboard.propTypes = {
     container: PropTypes.instanceOf(typeof Element === 'undefined' ? Object : Element),
 };
 
-export default AdminDashboard;
+export default PlanDetails;
