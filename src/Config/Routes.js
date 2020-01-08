@@ -5,6 +5,7 @@ import Dashboard from '../Components/Dashboard'
 import Login from '../Components/Login'
 import Main from '../Containers/Main'
 import Upgrade from '../Components/Upgrade'
+import AdminDashboard from '../Components/Admin/Dashboard'
 
 const CreateBrowserHistory = require("history").createBrowserHistory
 const history = CreateBrowserHistory()
@@ -18,6 +19,8 @@ class Routes extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/MemberPanel" component={Dashboard} />
                 <Route path="/Upgrade" component={Upgrade} />
+                {/* Admin Pages */}
+                <Route path="/AdminPanel" component={AdminDashboard} />
             </Router>
         )
     }

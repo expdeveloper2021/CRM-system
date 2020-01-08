@@ -63,7 +63,7 @@ class Registration extends Component {
         return (
             <div className="main">
                 <div className="btn-container">
-                    <Button variant="contained" style={{ backgroundColor: "#5bc0de", color: "white", marginTop: 40 }}>
+                    <Button variant="contained" style={{ backgroundColor: "#5bc0de", color: "white", marginTop: 40 }} onClick={() => window.location.href = "https://futuretrades.in"}>
                         Back Home
                     </Button>
                 </div>

@@ -8,12 +8,12 @@ import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import FileCopyIcon from '@material-ui/icons/FileCopy';
 import BusinessIcon from '@material-ui/icons/Business';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import StarIcon from '@material-ui/icons/Star';
+import ScheduleIcon from '@material-ui/icons/Schedule';
+import CheckIcon from '@material-ui/icons/Check';
 import CreateIcon from '@material-ui/icons/Create';
-import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
@@ -25,6 +25,13 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import './index.css'
 
@@ -68,30 +75,32 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-function Dashboard(props) {
+function AdminDashboard(props) {
     const { container } = props;
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const [open, setOpen] = React.useState(false);
-    const [open2, setOpen2] = React.useState(false);
-    const [open3, setOpen3] = React.useState(false);
 
     function handleClick() {
         setOpen(!open);
     }
 
-    function handleClick2() {
-        setOpen2(!open2);
-    }
-
-    function handleClick3() {
-        setOpen3(!open3);
-    }
-
     function handleDrawerToggle() {
         setMobileOpen(!mobileOpen);
     }
+
+    function createData(email, status) {
+        return { email, status };
+    }
+
+    const rows = [
+        createData('Frozen yoghurt', "Offline"),
+        createData('Ice cream sandwich', "Offline"),
+        createData('Eclair', "Offline"),
+        createData('Cupcake', "Active"),
+        createData('Gingerbread', "Active"),
+    ];
 
     const drawer = (
         <div>
@@ -111,7 +120,7 @@ function Dashboard(props) {
                     <ListItemIcon>
                         <DashboardIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Dashboard" onClick={() => props.history.push("/MemberPanel")} />
+                    <ListItemText primary="Dashboard" onClick={() => props.history.push("/AdminPanel")} />
                 </ListItem>
                 <Divider />
                 <ListItem button>
@@ -155,50 +164,8 @@ function Dashboard(props) {
                     <ListItemIcon>
                         <StarIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Upgrade" onClick={() => props.history.push("/Upgrade")} />
+                    <ListItemText primary="Upgrade" />
                 </ListItem>
-                <Divider />
-                <ListItem button onClick={handleClick2}>
-                    <ListItemIcon>
-                        <FileCopyIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Reports" />
-                    {open2 ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
-                <Collapse in={open2} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <ChevronRightIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Binary Income" />
-                        </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <ChevronRightIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Direct Income" />
-                        </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <ChevronRightIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Withdrawal History" />
-                        </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <ChevronRightIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Upgrade History" />
-                        </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <ChevronRightIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Coin Payment History" />
-                        </ListItem>
-                    </List>
-                </Collapse>
                 <Divider />
                 <ListItem button>
                     <ListItemIcon>
@@ -206,30 +173,6 @@ function Dashboard(props) {
                     </ListItemIcon>
                     <ListItemText primary="Referral Program" />
                 </ListItem>
-                <Divider />
-                <ListItem button onClick={handleClick3}>
-                    <ListItemIcon>
-                        <ContactSupportIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Support Center" />
-                    {open3 ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
-                <Collapse in={open3} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <ChevronRightIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Create Ticket" />
-                        </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <ChevronRightIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Ticket List" />
-                        </ListItem>
-                    </List>
-                </Collapse>
                 <Divider />
                 <ListItem button>
                     <ListItemIcon>
@@ -257,7 +200,7 @@ function Dashboard(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap>
-                        User Name
+                        Responsive drawer
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -299,37 +242,65 @@ function Dashboard(props) {
                     <span style={{ marginLeft: 10 }}>Dashboard</span>
                 </div>
                 <div className="main-content-dashboard">
-                    <div className="upper-portion-dashboard">
-                        <div className="informative-dashboard">
-                            <p>ID Verification</p>
-                            <p>Pending / Approved</p>
-                        </div>
-                        <div className="informative-dashboard">
-                            <p>$0.00</p>
-                            <p>ROI Income</p>
-                        </div>
-                        <div className="informative-dashboard">
-                            <p>$0.00</p>
-                            <p>Binary Income</p>
-                        </div>
-                        <div className="informative-dashboard">
-                            <p>$0.00</p>
-                            <p>Direct Income</p>
-                        </div>
+                    <div className="informative-content">
+                        <ScheduleIcon style={{ fill: "black" }} />
+                        <span style={{ marginLeft: 10 }}>Pending</span>
                     </div>
-                    <div className="status-dashboard">
-                        <p>Your Account Status</p>
-                        <hr />
-                        <p>Your account is a free account, please upgrade it to get more advantages.</p>
+                    <div>
+                        <TableContainer component={Paper}>
+                            <Table className={classes.table} aria-label="simple table">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell>Email</TableCell>
+                                        <TableCell align="right">Status</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {rows.map(row => (
+                                        <TableRow key={row.email}>
+                                            <TableCell>
+                                                {row.email}
+                                            </TableCell>
+                                            <TableCell align="right">{row.status}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    </div>
+                    <div className="informative-content" style={{ marginTop: 10 }}>
+                        <CheckIcon style={{ fill: "black" }} />
+                        <span style={{ marginLeft: 10 }}>Approved</span>
+                    </div>
+                    <div>
+                        <TableContainer component={Paper}>
+                            <Table className={classes.table} aria-label="simple table">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell>Email</TableCell>
+                                        <TableCell align="right">Status</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {rows.map(row => (
+                                        <TableRow key={row.email}>
+                                            <TableCell>
+                                                {row.email}
+                                            </TableCell>
+                                            <TableCell align="right">{row.status}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
                     </div>
                 </div>
-
             </main>
         </div>
     );
 }
 
-Dashboard.propTypes = {
+AdminDashboard.propTypes = {
     /**
      * Injected by the documentation to work in an iframe.
      * You won't need it on your project.
@@ -337,4 +308,4 @@ Dashboard.propTypes = {
     container: PropTypes.instanceOf(typeof Element === 'undefined' ? Object : Element),
 };
 
-export default Dashboard;
+export default AdminDashboard;
