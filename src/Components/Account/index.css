@@ -1,0 +1,15 @@
+.all-inputs-forma {
+    width: 80%;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+
+.all-inputs-forma p {
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.btn-registration {
+    text-align: right;
+}

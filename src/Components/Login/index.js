@@ -21,12 +21,14 @@ class Login extends Component {
         } else {
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then((succ) => {
+                    localStorage.setItem("uid", succ.user.uid)
                     swal({
                         title: "Great!",
                         text: "Sign In Successfully",
                         icon: "success",
                     }).then(() => {
                         this.setState({ email: '', password: '' })
+
                         this.props.history.push("/MemberPanel")
                     })
                 }).catch((err) => {

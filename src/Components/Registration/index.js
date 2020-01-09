@@ -4,6 +4,16 @@ import Button from '@material-ui/core/Button';
 import firebase from '../../Config/Firebase'
 import swal from 'sweetalert'
 
+const generateRandomCode = (() => {
+    const USABLE_CHARACTERS = "fats0123456789".split("");
+
+    return length => {
+        return new Array(length).fill(null).map(() => {
+            return USABLE_CHARACTERS[Math.floor(Math.random() * USABLE_CHARACTERS.length)];
+        }).join("");
+    }
+})();
+
 class Registration extends Component {
 
     constructor() {
@@ -41,13 +51,20 @@ class Registration extends Component {
                 } // userObj closes here
                 firebase.database().ref("users/" + uid).set(userObj)
                     .then(() => {
-                        // Redirect Work to be done
-                        swal({
-                            title: "Great!",
-                            text: "User Created Successfully",
-                            icon: "success",
-                        }).then(() => {
-                            this.setState({ sCode: '', sName: '', aName: '', phone: '', email: '', address: '', state: '', city: '', pincode: '', password: '' })
+                        let sCode = generateRandomCode(8)
+                        let userObj2 = {
+                            sCode,
+                            sName: aName,
+                            uid
+                        }
+                        firebase.database().ref("AllSponsors").push(userObj2).then(() => {
+                            swal({
+                                title: "Great!",
+                                text: "User Created Successfully",
+                                icon: "success",
+                            }).then(() => {
+                                this.setState({ sCode: '', sName: '', aName: '', phone: '', email: '', address: '', state: '', city: '', pincode: '', password: '' })
+                            })
                         })
                     })
             }).catch((err) => {
