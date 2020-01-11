@@ -1,13 +1,29 @@
 import React, { Component } from 'react'
 import './index.css'
 import Sidebar from '../../Containers/Sidebar'
-import DashboardIcon from '@material-ui/icons/Dashboard';
+import DashboardIcon from '@material-ui/icons/Dashboard'
+import firebase from '../../Config/Firebase'
 
 export class Dashboard extends Component {
+
+    constructor() {
+        super()
+        this.state = {
+            sCode: ''
+        }
+    }
+
+    componentDidMount() {
+        let uid = localStorage.getItem("uid")
+        firebase.database().ref("AllSponsors/" + uid).on("value", (data) => {
+            this.setState({ sCode: data.val().sCode })
+        })
+    }
+
     render() {
         return (
             <div>
-                <Sidebar>
+                <Sidebar sCode={!!this.state.sCode && this.state.sCode}>
                     <div className="informative-content">
                         <DashboardIcon style={{ fill: "black" }} />
                         <span style={{ marginLeft: 10 }}>Dashboard</span>

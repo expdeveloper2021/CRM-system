@@ -10,6 +10,11 @@
     margin-bottom: 5px;
 }
 
+.all-inputs-forma h5 {
+    color: black;
+    font-weight: bold;
+}
+
 .btn-registration {
     text-align: right;
 }

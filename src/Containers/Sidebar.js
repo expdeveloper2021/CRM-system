@@ -108,18 +108,18 @@ function Sidebar(props) {
                 aria-labelledby="nested-list-subheader"
                 className={classes.root2}
             >
-                <ListItem button>
+                <ListItem button onClick={() => props.history.push("/MemberPanel")}>
                     <ListItemIcon>
                         <DashboardIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Dashboard" onClick={() => props.history.push("/MemberPanel")} />
+                    <ListItemText primary="Dashboard" />
                 </ListItem>
                 <Divider />
-                <ListItem button>
+                <ListItem button onClick={() => props.history.push("/MyAccount")}>
                     <ListItemIcon>
                         <AccountBoxIcon />
                     </ListItemIcon>
-                    <ListItemText primary="My Account" onClick={() => props.history.push("/MyAccount")} />
+                    <ListItemText primary="My Account" />
                 </ListItem>
                 <Divider />
                 <ListItem button onClick={handleClick}>
@@ -152,11 +152,11 @@ function Sidebar(props) {
                     </List>
                 </Collapse>
                 <Divider />
-                <ListItem button>
+                <ListItem button onClick={() => props.history.push("/Upgrade")}>
                     <ListItemIcon>
                         <StarIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Upgrade" onClick={() => props.history.push("/Upgrade")} />
+                    <ListItemText primary="Upgrade" />
                 </ListItem>
                 <Divider />
                 <ListItem button onClick={handleClick2}>
@@ -191,12 +191,6 @@ function Sidebar(props) {
                                 <ChevronRightIcon />
                             </ListItemIcon>
                             <ListItemText primary="Upgrade History" />
-                        </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <ChevronRightIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Coin Payment History" />
                         </ListItem>
                     </List>
                 </Collapse>
@@ -258,8 +252,8 @@ function Sidebar(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap>
-                        Responsive drawer
-          </Typography>
+                        Sponsor Code: {props.sCode}
+                    </Typography>
                 </Toolbar>
             </AppBar>
             <nav className={classes.drawer} aria-label="mailbox folders">
