@@ -51,6 +51,7 @@ class Registration extends Component {
                     .then((success) => {
                         let uid = firebase.auth().currentUser.uid;
                         let user = success.user
+                        let sCode2 = "FT" + generateRandomCode(6)
                         let userObj = {
                             sCode,
                             sName,
@@ -63,10 +64,10 @@ class Registration extends Component {
                             pincode,
                             verified: false,
                             activated: false,
+                            sCode2,
                         } // userObj closes here
                         firebase.database().ref("users/" + uid).set(userObj)
                             .then(() => {
-                                let sCode2 = "FT" + generateRandomCode(6)
                                 let userObj2 = {
                                     sCode,
                                     sCode2,

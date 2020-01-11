@@ -25,13 +25,15 @@ class Login extends Component {
                 .then((succ) => {
                     if (!!succ.user.emailVerified) {
                         localStorage.setItem("uid", succ.user.uid)
-                        swal({
-                            title: "Great!",
-                            text: "Sign In Successfully",
-                            icon: "success",
-                        }).then(() => {
-                            this.setState({ email: '', password: '' })
-                            this.props.history.push("/MemberPanel")
+                        firebase.database().ref("users/" + succ.user.uid + "/verified").set(true).then(() => {
+                            swal({
+                                title: "Great!",
+                                text: "Sign In Successfully",
+                                icon: "success",
+                            }).then(() => {
+                                this.setState({ email: '', password: '' })
+                                this.props.history.push("/MemberPanel")
+                            })
                         })
                     } else {
                         this.setState({ loader: false })
@@ -49,6 +51,17 @@ class Login extends Component {
                         icon: "error",
                     });
                 })
+        }
+    }
+
+    forgot() {
+        let ask = prompt("Please enter your email id. We'll send you a reset link shortly")
+        if (ask !== "") {
+            firebase.auth().sendPasswordResetEmail(ask).then(function () {
+                alert("Link sended to your account.")
+            }).catch(function (error) {
+                alert(error.message)
+            });
         }
     }
 
@@ -72,6 +85,9 @@ class Login extends Component {
                                 </div>
                                 <div className="input-group">
                                     <input type="password" className="form-control" placeholder="Password" value={this.state.password} onChange={(e) => this.setState({ password: e.target.value })} />
+                                </div>
+                                <div className="input-group">
+                                    <p style={{ cursor: "pointer" }} onClick={this.forgot.bind(this)}>Forgot Password?</p>
                                 </div>
                                 <div className="btn-registration">
                                     <Button variant="contained" style={{ backgroundColor: "#337ab7", color: "white", marginTop: 15 }} onClick={this.signUp.bind(this)}>

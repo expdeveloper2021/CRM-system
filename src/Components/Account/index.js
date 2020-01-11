@@ -88,11 +88,13 @@ export class Account extends Component {
                         userObj.img = snapUrl
                         userObj.uid = uid
                         firebase.database().ref("users/" + uid + "/pan").set(userObj).then(() => {
-                            this.setState({ loaderPan: false })
-                            swal({
-                                title: "Congratulations",
-                                text: "Pan Card added",
-                                icon: "success"
+                            firebase.database().ref("allActivations/pan").push(userObj).then(() => {
+                                this.setState({ loaderPan: false, panNumber: '' })
+                                swal({
+                                    title: "Congratulations",
+                                    text: "Pan Card added and is in approval progress by admin.",
+                                    icon: "success"
+                                })
                             })
                         }).catch((e) => {
                             this.setState({ loaderPan: false })
@@ -122,11 +124,13 @@ export class Account extends Component {
                         userObj.img = snapUrl
                         userObj.uid = uid
                         firebase.database().ref("users/" + uid + "/adhar").set(userObj).then(() => {
-                            this.setState({ loaderAdhar: false })
-                            swal({
-                                title: "Congratulations",
-                                text: "Adhar Card added",
-                                icon: "success"
+                            firebase.database().ref("allActivations/adhar").push(userObj).then(() => {
+                                this.setState({ loaderAdhar: false, adharNumber: '' })
+                                swal({
+                                    title: "Congratulations",
+                                    text: "Adhar Card added and is in approval progress by admin.",
+                                    icon: "success"
+                                })
                             })
                         }).catch((e) => {
                             this.setState({ loaderAdhar: false })

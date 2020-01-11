@@ -252,7 +252,7 @@ function Sidebar(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap>
-                        Sponsor Code: {props.sCode}
+                        Sponsor ID: {props.sCode}
                     </Typography>
                 </Toolbar>
             </AppBar>
